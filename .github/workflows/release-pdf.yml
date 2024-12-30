@@ -1,0 +1,33 @@
+name: Release PDF
+
+on:
+  push:
+    branches:
+      - main
+  paths:
+    - 'README.md'
+
+jobs:
+  release:
+    name: Release PDF
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run generate
+      - name: Create a release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: ${{ github.event.pull_request.body }}
+          tag_name: ${{ github.event.pull_request.title }}
+          generate_release_notes: true
+          fail_on_unmatched_files: true
+          files: 職務経歴書.pdf
