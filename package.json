@@ -1,0 +1,22 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "description": "## 基本情報",
+  "main": "index.js",
+  "scripts": {
+    "generate": "md-to-pdf README.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jinpei0908/resume.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jinpei0908/resume/issues"
+  },
+  "homepage": "https://github.com/jinpei0908/resume#readme",
+  "devDependencies": {
+    "md-to-pdf": "^5.2.4"
+  }
+}
