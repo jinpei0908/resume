@@ -4,7 +4,7 @@
   "description": "## 基本情報",
   "main": "index.js",
   "scripts": {
-    "generate": "md-to-pdf README.md"
+    "generate": "md-to-pdf --config-file config.json README.md"
   },
   "repository": {
     "type": "git",
